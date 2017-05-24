@@ -230,6 +230,9 @@ func gatewayMain(ctx *cli.Context) {
 	router := mux.NewRouter().SkipClean(true)
 	registerGatewayAPIRouter(router, newObject)
 
+	// Add STS router.
+	registerSTSRouter(router)
+
 	var handlerFns = []HandlerFunc{
 		// Validate all the incoming paths.
 		setPathValidityHandler,
