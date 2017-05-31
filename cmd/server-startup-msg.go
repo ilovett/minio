@@ -49,7 +49,7 @@ func printStartupMessage(apiEndPoints []string) {
 
 	// Prints `mc` cli configuration message chooses
 	// first endpoint as default.
-	printCLIAccessMsg(apiEndPoints[0])
+	printCLIAccessMsg(apiEndPoints[0], "myminio")
 
 	// Prints documentation message.
 	printObjectAPIMsg()
@@ -124,7 +124,7 @@ func printEventNotifiers() {
 
 // Prints startup message for command line access. Prints link to our documentation
 // and custom platform specific message.
-func printCLIAccessMsg(endPoint string) {
+func printCLIAccessMsg(endPoint string, alias string) {
 	// Get saved credentials.
 	cred := serverConfig.GetCredential()
 
